@@ -46,3 +46,12 @@ $secondary-color: #36454f;
     height: 40vh;
     width: 250px;
 }
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  color: white;
+  width: 100%;
+}
