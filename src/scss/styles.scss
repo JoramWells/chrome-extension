@@ -1,0 +1,48 @@
+$primary-color: #282c35;
+$secondary-color: #36454f;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.banner {
+  background: linear-gradient(
+      to right,
+      rgba($primary-color, 0.9),
+      rgba($primary-color, 0.3)
+    ),
+    url("../img/bram2.jpg");
+  background-size: cover;
+  background-position:top;
+  background-repeat: no-repeat;
+  z-index: -1;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.container {
+  text-align: center;
+  color: white;
+
+  width: 50%;
+  font-size: 1.1rem;
+  top: 40%;
+  position: absolute;
+  display: block;
+  margin: auto;
+  // -ms-transform: translateY(-50%);
+  // transform: translateY(-50%);
+}
+.code{
+    background-color: rgba($color: #000000, $alpha: .5);
+    height: 40vh;
+    width: 250px;
+}
