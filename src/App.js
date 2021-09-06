@@ -2,7 +2,7 @@ import "./App.css";
 // import { vocab } from "./vocabList";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 import { HeartIcon, SunIcon } from "@heroicons/react/solid";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    return () => {};
+    return () => { };
   }, []);
   return (
     <>
@@ -36,21 +36,40 @@ function App() {
             }}
           />
         </div> */}
-          <h1 style={{ color: "#50c878" }}>
-            <u>gLad tO hAvE yoU sir</u>
-            <SunIcon style={{ width: "1.5rem", color: "#fff44f" }} />
-          </h1>
-          <p>{data["text"]}</p>
-          <div style={{ color: "white", fontSize: "0.9rem", margin: "10px" }}>
-            ~ [<i>{data["author"] ? data["author"] : "Anonymous"}</i>]
-            <div>
-              <HeartIcon style={{ width: "1.5rem", color: "#f88379" }} />
+          <div>
+            <h1>
+              <u>Welcome back</u>
+              <SunIcon style={{ width: "1.5rem", color: "#fff44f" }} />
+            </h1>
+            <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+              <div>{data["text"] ?
+                <div>
+                  {data["text"]}
+                  <div style={{ color: "white", fontSize: "0.9rem", margin: "10px" }}>
+                    ~ [<i>{data["author"] ? data["author"] : "Anonymous"}</i>]
+                    <div>
+                      <HeartIcon style={{ width: "1.5rem", color: "#f88379" }} />
+                    </div>
+                  </div>
+                </div>
+                : <div>
+                  <div className="loader"></div>
+                  <div className="loader"></div>
+                  <div className="loader"></div>
+                  <div className="loader"></div>
+                  <div className="loader"></div>
+                  <div style={{ fontSize: "1rem" }}>Just a second</div>
+                </div>}</div>
             </div>
+
+
           </div>
+
+
         </div>
-      <footer className="footer">
-       Copyright @2021
-      </footer>
+        <footer className="footer">
+          Copyright @2021
+        </footer>
       </div>
 
     </>

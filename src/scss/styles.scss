@@ -17,7 +17,7 @@ $secondary-color: #36454f;
       rgba($primary-color, 0.9),
       rgba($primary-color, 0.3)
     ),
-    url("../img/bram2.jpg");
+    url("../img/bram2.webp");
   background-size: cover;
   background-position:top;
   background-repeat: no-repeat;
@@ -54,4 +54,46 @@ $secondary-color: #36454f;
   bottom: 0;
   color: white;
   width: 100%;
+}
+.loader{
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  border-radius: 100px;
+  z-index: 10;
+  margin: .4rem;
+  animation: scaling 2.5s ease-in-out infinite;
+}
+@keyframes scaling {
+  0%, 100%{
+    transform: scale(0.2);
+    background-color: #30FFb7;
+  }
+  40%{
+    transform: scale(1);
+    background-color: #07deff;
+  }
+  50%{
+    transform: scale(1);
+    background-color: #0761ff;
+
+  }
+  
+}
+.loader:nth-child(0){
+  animation-delay: 0s;
+}
+.loader:nth-child(1){
+  animation-delay: 0.1s;
+}.loader:nth-child(2){
+  animation-delay: 0.4s;
+}
+.loader:nth-child(3){
+  animation-delay: 0.6s;
+}
+.loader:nth-child(4){
+  animation-delay: 0.8s;
+}
+.loader:nth-child(5){
+  animation-delay: 1s;
 }
