@@ -14,9 +14,7 @@
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  z-index: -1;
   height: 100vh;
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +24,9 @@
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container {
@@ -37,6 +38,11 @@
   position: absolute;
   display: block;
   margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .code {
@@ -137,5 +143,33 @@
 .loader:nth-child(5) {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
+}
+
+.chevron {
+  width: 2rem;
+  color: rgba(248, 131, 121, 0.8);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.chevron_div {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  width: 3rem;
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.chevron_div:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=styles.css.map */
