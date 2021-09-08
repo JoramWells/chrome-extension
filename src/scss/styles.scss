@@ -12,16 +12,16 @@ $secondary-color: #36454f;
 }
 
 .banner {
-  background: linear-gradient(
-      to right,
-      rgba($primary-color, 0.9),
-      rgba($primary-color, 0.3)
-    ),
-    url("../img/bram2.webp");
+  // background: linear-gradient(
+  //     to right,
+  //     rgba($primary-color, 0.9),
+  //     rgba($primary-color, 0.3)
+  //   );
+    // url("https://source.unsplash.com/1600x900/?discover");
   background-size: cover;
   background-position:top;
   background-repeat: no-repeat;
-  // z-index: -1;
+  z-index: -1;
   height: 100vh;
   // position: relative;
   display: flex;
@@ -103,8 +103,8 @@ $secondary-color: #36454f;
 }
 .chevron{
   width: 2rem;
-  // color: #f88379;
-  color: rgba($color: #f88379, 1);
+  color: #f88379;
+  // color: rgba($color: #f88379, 1);
   font-size: 2rem;
   cursor: pointer;
 }

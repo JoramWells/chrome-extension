@@ -1,18 +1,23 @@
 import "./App.css";
 // import { vocab } from "./vocabList";
 import axios from "axios";
+import stopword from 'stopword'
 import { useEffect, useState } from "react";
 // import Typewriter from "typewriter-effect";
 import { ChevronLeftIcon, ChevronRightIcon, HeartIcon } from "@heroicons/react/solid";
 
 function App() {
   const [data, setData] = useState([]);
+  const [unsplash, setUnsplash] = useState([])
   const fetchData = async () => {
     await axios
       .get("https://allquotes.herokuapp.com/quotes/rand")
       .then((response) => {
         setData(response.data);
         localStorage.setItem("data", JSON.stringify(response.data));
+        const searchTerms = stopword.removeStopwords(response.data["text"].split(" "),[...stopword.en])
+        setUnsplash(searchTerms)
+
       })
       .catch((err) => {
         console.log(err);
@@ -26,6 +31,11 @@ function App() {
       .then((response) => {
         setData(response.data);
         localStorage.setItem("data", JSON.stringify(response.data));
+        // console.log(response.data["text"].split(" "))
+        // console.log(stopword.removeStopwords(response.data["text"].split(" "),[...stopword.en]))
+        const searchTerms = stopword.removeStopwords(response.data["text"].split(" "),[...stopword.en])
+        setUnsplash(searchTerms)
+        console.log(unsplash.join(','))
       })
       .catch((err) => {
         console.log(err);
@@ -44,8 +54,8 @@ function App() {
     return () => { };
   }, []);
   return (
-    <>
-      <div className="banner">
+    <div>
+      <div className="banner" style={{backgroundImage:`url('https://source.unsplash.com/1600x900/?${unsplash.join(',')}')`, backgroundColor:"black"}}>
         <div className="chevron_div">
           <ChevronLeftIcon className="chevron" onClick={()=>fetchPrev()} />
         </div>
@@ -59,8 +69,8 @@ function App() {
             }}
           />
         </div> */}
-          <div>
-            <h1 style={{color:"white"}}>bramuel</h1>
+          <div style={{backgroundColor:"rgba(0,0,0,0.6)", borderRadius:"5px"}}>
+            <h1 style={{color:"white" }}>bramuel</h1>
             <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
               <div>{data ?
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -97,7 +107,7 @@ function App() {
         </footer> */}
       </div>
 
-    </>
+    </div>
   );
 }
 
